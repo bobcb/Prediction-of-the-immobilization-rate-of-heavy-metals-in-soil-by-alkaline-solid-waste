@@ -9,50 +9,48 @@ from joblib import load
 import numpy as np
 
 # Load model and scaler
-model = load('ML_model.joblib')
-scaler = load('StandardScaler.joblib')
+model = load('C:/Users/11931/Desktop/JupyterNotebook/test software/ML_model.joblib')
+scaler = load('C:/Users/11931/Desktop/JupyterNotebook/test software/StandardScaler.joblib')
 
 # Set page title
 st.title('Prediction of the immobilization rate of heavy metals in soil by alkaline solid waste')
 
-# Apply custom CSS for input styling and alignment
+# Apply custom CSS for styling and spacing (without black borders)
 st.markdown("""
     <style>
     /* Global font style for the whole app */
     * {
-        /* Removed font-family settings for default font */
+        font-family: 'Arial', sans-serif;
     }
 
-    /* Specific input styling */
+    /* Increase spacing between columns */
+    .block-container {
+        padding-left: 5rem;
+        padding-right: 5rem;
+    }
+
+    /* Adjust space between input fields and labels */
+    .spacing-row {
+        padding-bottom: 2.15em;  
+    }
+
+    /* Removed border styling from input fields */
     .stNumberInput input {
         background-color: white !important;
-        border: 2px solid black !important;
         color: black !important;
-        /* Removed font-family settings for default font */
     }
 
     /* Make sure all labels are using the correct font */
     .stTextInput label {
         font-weight: bold !important;
         color: black !important;
-        /* Removed font-family settings for default font */
     }
 
-    /* Ensure markdown headings use the default font */
-    .stMarkdown h3, .stMarkdown h1, .stMarkdown h2 {
-        /* Removed font-family settings for default font */
-    }
-
-    /* Additional spacing for alignment */
-    .spacing-row {
-        padding-bottom: 2.15em;  /* Adjust this value to match the height of the title */
-    }
     </style>
     """, unsafe_allow_html=True)
 
-
-# Layout the input fields in three columns with group headers
-col1, col2, col3 = st.columns(3)
+# Layout the input fields in three columns with group headers and increased spacing
+col1, spacer1, col2, spacer2, col3 = st.columns([1, 0.1, 1, 0.1, 1])
 
 with col1:
     st.markdown("### S/S soil physicochemical properties")
@@ -93,4 +91,5 @@ if st.button('Predict'):
     
     if feature != 0:
         st.success(f'Residual: {residual:.2f}%')
+
 
