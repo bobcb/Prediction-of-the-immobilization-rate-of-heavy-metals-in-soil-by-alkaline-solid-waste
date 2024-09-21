@@ -18,39 +18,21 @@ st.title('Prediction of the immobilization rate of heavy metals in soil by alkal
 # Apply custom CSS for styling and spacing (without black borders)
 st.markdown("""
     <style>
-    /* Global font style for the whole app */
-    * {
-        font-family: 'Arial', sans-serif;
-    }
-
     /* Increase spacing between columns */
     .block-container {
         padding-left: 5rem;
         padding-right: 5rem;
     }
 
-    /* Adjust space between input fields and labels */
+    /* Add spacing row */
     .spacing-row {
-        padding-bottom: 2.15em;  
+        padding-bottom: 2.15em;  /* Adjust this value to control the spacing */
     }
-
-    /* Removed border styling from input fields */
-    .stNumberInput input {
-        background-color: white !important;
-        color: black !important;
-    }
-
-    /* Make sure all labels are using the correct font */
-    .stTextInput label {
-        font-weight: bold !important;
-        color: black !important;
-    }
-
     </style>
     """, unsafe_allow_html=True)
 
-# Layout the input fields in three columns with group headers and increased spacing
-col1, spacer1, col2, spacer2, col3 = st.columns([1, 0.1, 1, 0.1, 1])
+# Layout the input fields in three columns with increased spacing between columns
+col1, spacer1, col2, spacer2, col3 = st.columns([1, 0.5, 1, 0.5, 1])
 
 with col1:
     st.markdown("### S/S soil physicochemical properties")
@@ -62,6 +44,7 @@ with col1:
 
 with col2:
     st.markdown("### Experimental conditions")
+    # Add spacing before inputs in this column
     st.markdown('<div class="spacing-row"></div>', unsafe_allow_html=True)
     feature6 = st.number_input(u'$\mathrm{Temperature\;(℃)}$', step=0.01, format='%.2f')
     feature7 = st.number_input(u'$\mathrm{Curing\;time\;(d)}$', step=0.01, format='%.2f')
@@ -70,6 +53,7 @@ with col2:
 
 with col3:
     st.markdown("### Heavy metal properties")
+    # Add spacing before inputs in this column
     st.markdown('<div class="spacing-row"></div>', unsafe_allow_html=True)
     feature10 = st.number_input(u'$\mathrm{Electronegativity}$', step=0.01, format='%.2f')
     feature11 = st.number_input(u'$\mathrm{Hydrated\;ion\;radius\;(Å)}$', step=0.01, format='%.2f')
