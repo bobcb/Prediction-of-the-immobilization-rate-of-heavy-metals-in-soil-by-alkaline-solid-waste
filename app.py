@@ -9,8 +9,8 @@ from joblib import load
 import numpy as np
 
 # Load model and scaler
-model = load('C:/Users/11931/Desktop/JupyterNotebook/test software/ML_model.joblib')
-scaler = load('C:/Users/11931/Desktop/JupyterNotebook/test software/StandardScaler.joblib')
+model = load('ML_model.joblib')
+scaler = load('StandardScaler.joblib')
 
 # Set page title
 st.title('Prediction of the immobilization rate of heavy metals in soil by alkaline solid waste')
@@ -91,5 +91,4 @@ if st.button('Predict'):
     
     if feature != 0:
         st.success(f'Residual: {residual:.2f}%')
-
 
