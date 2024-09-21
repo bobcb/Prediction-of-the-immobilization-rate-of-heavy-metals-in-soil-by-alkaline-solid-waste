@@ -28,16 +28,11 @@ st.markdown("""
     .spacing-row {
         padding-bottom: 2.15em;  /* Adjust this value to control the spacing */
     }
-
-    /* Force line break for long input labels */
-    .force-break {
-        white-space: pre-wrap; /* Forces the text to wrap */
-    }
     </style>
     """, unsafe_allow_html=True)
 
 # Layout the input fields in three columns with increased spacing between columns
-col1, spacer1, col2, spacer2, col3 = st.columns([1,0.5, 1, 0.5, 1])
+col1, spacer1, col2, spacer2, col3 = st.columns([1,0.7, 1, 0.7, 1])
 
 with col1:
     st.markdown("### S/S soil physicochemical properties")
@@ -45,8 +40,7 @@ with col1:
     feature2 = st.number_input(u'$\mathrm{CaO\;(\%)}$', step=0.01, format='%.2f')
     feature3 = st.number_input(u'$\mathrm{Al_2O_3\;(\%)}$', step=0.01, format='%.2f')
     feature4 = st.number_input(u'$\mathrm{Soil\;pH}$', step=0.01, format='%.2f')
-    # Add the class to force the text to break in the long label
-    feature5 = st.number_input('<div class="force-break">Soil heavy metal concentration (mg/kg)</div>', step=0.01, format='%.2f')
+    feature5 = st.number_input(u'$\mathrm{Soil\;heavy\;metal}$\n$\mathrm{concentration\;(mg/kg)}$', step=0.01, format='%.2f')
 
 with col2:
     st.markdown("### Experimental conditions")
@@ -64,9 +58,8 @@ with col3:
     feature10 = st.number_input(u'$\mathrm{Electronegativity}$', step=0.01, format='%.2f')
     feature11 = st.number_input(u'$\mathrm{Hydrated\;ion\;radius\;(Å)}$', step=0.01, format='%.2f')
 
-# Full-width row for the experimental immobilization rate
-col_exp = st.columns([3])[0]  # This makes the column as wide as the three other columns combined
-feature = col_exp.number_input(u'$\mathrm{Experimental\;immobilization\;rate\;(\%)}$', step=0.01, format='%.2f')
+# Experimental heavy metal immobilization rate input
+feature = st.number_input(u'$\mathrm{Experimental\;immobilization\;rate\;(\%)}$', step=0.01, format='%.2f')
 
 # Gather all feature inputs
 feature_values = [feature1, feature2, feature3, feature4, feature5, feature6, feature7, feature8, feature9, feature10, feature11]
