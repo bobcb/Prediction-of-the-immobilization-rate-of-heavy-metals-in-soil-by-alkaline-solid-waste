@@ -32,7 +32,7 @@ st.markdown("""
     """, unsafe_allow_html=True)
 
 # Layout the input fields in three columns with increased spacing between columns
-col1, spacer1, col2, spacer2, col3 = st.columns([1,0.7, 1, 0.7, 1])
+col1, spacer1, col2, spacer2, col3 = st.columns([1.2,0.5, 1.2, 0.5, 1.2])
 
 with col1:
     st.markdown("### S/S soil physicochemical properties")
