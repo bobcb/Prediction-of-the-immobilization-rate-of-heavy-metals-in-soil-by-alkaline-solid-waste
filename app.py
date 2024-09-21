@@ -20,8 +20,8 @@ st.markdown("""
     <style>
     /* Increase spacing between columns */
     .block-container {
-        padding-left: 5rem;
-        padding-right: 5rem;
+        padding-left: 7rem;  /* Adjust padding to make the whole layout wider */
+        padding-right: 7rem;
     }
 
     /* Add spacing row */
@@ -32,7 +32,7 @@ st.markdown("""
     """, unsafe_allow_html=True)
 
 # Layout the input fields in three columns with increased spacing between columns
-col1, spacer1, col2, spacer2, col3 = st.columns([1, 0.5, 1, 0.5, 1])
+col1, spacer1, col2, spacer2, col3 = st.columns([1.5, 1, 1.5, 1, 1.5])
 
 with col1:
     st.markdown("### S/S soil physicochemical properties")
