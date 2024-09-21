@@ -31,7 +31,7 @@ st.markdown("""
 
     /* Custom font size for the column headers */
     .small-header {
-        font-size: 14px;  /* You can adjust this size as needed */
+        font-size: 18px;  /* You can adjust this size as needed */
         font-weight: bold;
         padding-bottom: 10px; /* Adds some space below the title */
     }
@@ -42,7 +42,7 @@ st.markdown("""
 col1, spacer1, col2, spacer2, col3 = st.columns([1.2,0.5, 1.2, 0.5, 1.2])
 
 with col1:
-    st.markdown("### S/S soil physicochemical properties")
+    st.markdown('<div class="small-header">S/S soil physicochemical properties</div>', unsafe_allow_html=True)
     feature1 = st.number_input(u'$\mathrm{SiO_2\;(\%)}$', step=0.01, format='%.2f')
     feature2 = st.number_input(u'$\mathrm{CaO\;(\%)}$', step=0.01, format='%.2f')
     feature3 = st.number_input(u'$\mathrm{Al_2O_3\;(\%)}$', step=0.01, format='%.2f')
@@ -50,7 +50,7 @@ with col1:
     feature5 = st.number_input(u'$\mathrm{Soil\;heavy\;metal}$\n$\mathrm{concentration\;(mg/kg)}$', step=0.01, format='%.2f')
 
 with col2:
-    st.markdown("### Experimental conditions")
+    st.markdown('<div class="small-header">Experimental conditions</div>', unsafe_allow_html=True)
     # Add spacing before inputs in this column
     st.markdown('<div class="spacing-row"></div>', unsafe_allow_html=True)
     feature6 = st.number_input(u'$\mathrm{Temperature\;(℃)}$', step=0.01, format='%.2f')
@@ -59,7 +59,7 @@ with col2:
     feature9 = st.number_input(u'$\mathrm{Extraction\;agent\;pH}$', step=0.01, format='%.2f')
 
 with col3:
-    st.markdown("### Heavy metal properties")
+    st.markdown('<div class="small-header">Heavy metal properties</div>', unsafe_allow_html=True)
     # Add spacing before inputs in this column
     st.markdown('<div class="spacing-row"></div>', unsafe_allow_html=True)
     feature10 = st.number_input(u'$\mathrm{Electronegativity}$', step=0.01, format='%.2f')
