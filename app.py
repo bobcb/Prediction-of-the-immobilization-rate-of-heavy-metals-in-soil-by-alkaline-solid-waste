@@ -28,6 +28,13 @@ st.markdown("""
     .spacing-row {
         padding-bottom: 2.15em;  /* Adjust this value to control the spacing */
     }
+
+    /* Custom font size for the column headers */
+    .small-header {
+        font-size: 20px;  /* You can adjust this size as needed */
+        font-weight: bold;
+        padding-bottom: 10px; /* Adds some space below the title */
+    }
     </style>
     """, unsafe_allow_html=True)
 
