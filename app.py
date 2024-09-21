@@ -31,7 +31,7 @@ st.markdown("""
 
     /* Custom font size for the column headers */
     .small-header {
-        font-size: 20px;  /* You can adjust this size as needed */
+        font-size: 18px;  /* You can adjust this size as needed */
         font-weight: bold;
         padding-bottom: 10px; /* Adds some space below the title */
     }
