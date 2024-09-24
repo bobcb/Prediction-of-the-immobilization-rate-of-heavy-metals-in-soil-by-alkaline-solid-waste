@@ -25,21 +25,25 @@ st.markdown("""
         .main-title {
             font-size: 24px;
             font-weight: bold;
-            width: 1200px; /* Set title width */
+            width: 1020px; /* Set title width */
             word-break: break-word;
             hyphens: auto;  /* Adds hyphenation for long words */
         }
-
-        /* Set fixed width for columns */
-        .fixed-column {
-            width: 300px;  /* Set column width */
-        }
-
+    /* Small header style */
+    .small-header {
+        font-size: 18px;  /* 设置合适的字号大小 */
+        font-weight: bold;  /* 确保加粗 */
+    }
         /* Align title left with first column, right with last column */
         .title-container {
             display: flex;
             justify-content: space-between;  /* Align both sides of the title */
             width: 100%;
+        }
+
+        /* Set fixed width for columns */
+        .fixed-column {
+            width: 300px;  /* Set column width */
         }
 
         /* Adjust padding in columns */
@@ -53,7 +57,7 @@ st.markdown("""
 st.markdown('<div class="title-container"><h1 class="main-title">Prediction of the immobilization rate of heavy metals in soil by alkaline solid waste</h1></div>', unsafe_allow_html=True)
 
 # Layout the input fields in three columns with appropriate spacing and alignment
-col1, spacer1, col2, spacer2, col3 = st.columns([1, 0.1, 1, 0.1, 1])
+col1, spacer1, col2, spacer2, col3 = st.columns([1, 0.2, 1, 0.2, 1])
 
 with col1:
     st.markdown('<div class="fixed-column">', unsafe_allow_html=True)
@@ -82,7 +86,7 @@ with col3:
     st.markdown('</div>', unsafe_allow_html=True)
 
 # Experimental heavy metal immobilization rate input
-
+feature = st.number_input(u'$\mathrm{Experimental\;immobilization\;rate\;(\%)}$', step=0.01, format='%.2f')
 
 # Gather all feature inputs
 feature_values = [feature1, feature2, feature3, feature4, feature5, feature6, feature7, feature8, feature9, feature10, feature11]
@@ -98,6 +102,7 @@ if st.button('Predict'):
 
     if feature != 0:
         st.success(f'Residual: {residual:.2f}%')
+
 
 
 # In[ ]:
