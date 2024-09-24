@@ -84,6 +84,8 @@ with col3:
     feature11 = st.number_input(u'$\mathrm{Hydrated\;ion\;radius\;(Å)}$', step=0.01, format='%.2f')
     st.markdown('</div>', unsafe_allow_html=True)
 
+feature = st.number_input(u'$\mathrm{Experimental\;immobilization\;rate\;(\%)}$', step=0.01, format='%.2f')
+
 # Gather all feature inputs
 feature_values = [feature1, feature2, feature3, feature4, feature5, feature6, feature7, feature8, feature9, feature10, feature11]
 
@@ -92,14 +94,25 @@ if st.button('Predict'):
     input_data = np.array([feature_values])
     input_data_scaled = scaler.transform(input_data)
     prediction = model.predict(input_data_scaled)
+    residual = abs(float(prediction) - feature)
     
     st.success(f'Predicted Heavy Metal Immobilization Rate: {prediction[0]:.2f}%')
+    
+    if feature != 0:
+        st.success(f'Residual: {residual:.2f}%')
 
 
-# In[ ]:
+# In[4]:
 
 
+python3 --version
 
+
+# In[5]:
+
+
+import sys
+print(sys.version)
 
 
 # In[ ]:
