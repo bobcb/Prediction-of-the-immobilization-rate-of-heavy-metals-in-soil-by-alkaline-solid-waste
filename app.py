@@ -49,7 +49,7 @@ st.markdown("""
 """, unsafe_allow_html=True)
 
 # Set page title with proper alignment and hyphenation for long words
-st.markdown('<div class="title-container"><h1 class="main-title">Prediction of the immobilization rate of heavy metals<br>in soil by alkaline solid waste</h1></div>', unsafe_allow_html=True)
+st.markdown('<div class="title-container"><h1 class="main-title">Prediction of the immobilization rate of<br>heavy metals in soil by alkaline solid waste</h1></div>', unsafe_allow_html=True)
 
 
 # Layout the input fields in three columns with appropriate spacing and alignment
