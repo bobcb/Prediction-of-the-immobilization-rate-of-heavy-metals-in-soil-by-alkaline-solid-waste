@@ -23,7 +23,7 @@ st.markdown("""
 
         /* Set width for the title */
         .main-title {
-            font-size: 28px;
+            font-size: 32px;
             font-weight: bold;
             width: 1020px; /* Set title width */
             word-break: break-word;
