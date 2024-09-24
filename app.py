@@ -32,7 +32,7 @@ st.markdown("""
 
         /* Small header style */
         .small-header {
-            font-size: 18px;  /* 设置合适的字号大小 */
+            font-size: 20px;  /* 设置合适的字号大小 */
             font-weight: bold;  /* 确保加粗 */
         }
 
@@ -49,7 +49,8 @@ st.markdown("""
 """, unsafe_allow_html=True)
 
 # Set page title with proper alignment and hyphenation for long words
-st.markdown('<div class="title-container"><h1 class="main-title">Prediction of the immobilization rate of heavy metals in soil by alkaline solid waste</h1></div>', unsafe_allow_html=True)
+st.markdown('<div class="title-container"><h1 class="main-title">Prediction of the immobilization rate of heavy metals<br>in soil by alkaline solid waste</h1></div>', unsafe_allow_html=True)
+
 
 # Layout the input fields in three columns with appropriate spacing and alignment
 col1, spacer1, col2, spacer2, col3 = st.columns([1, 0.2, 1, 0.2, 1])
@@ -78,7 +79,7 @@ with col2:
 with col3:
     st.markdown('<div class="fixed-column">', unsafe_allow_html=True)
     st.markdown('<div class="small-header">Heavy metal properties</div>', unsafe_allow_html=True)
-    st.markdown('<div class="spacing-row"></div>', unsafe_allow_html=True)
+    
     feature10 = st.number_input(u'$\mathrm{Electronegativity}$', step=0.01, format='%.2f')
     feature11 = st.number_input(u'$\mathrm{Hydrated\;ion\;radius\;(Å)}$', step=0.01, format='%.2f')
     st.markdown('</div>', unsafe_allow_html=True)
@@ -91,12 +92,9 @@ if st.button('Predict'):
     input_data = np.array([feature_values])
     input_data_scaled = scaler.transform(input_data)
     prediction = model.predict(input_data_scaled)
-    residual = abs(float(prediction) - feature)
 
     st.success(f'Predicted Heavy Metal Immobilization Rate: {prediction[0]:.2f}%')
 
-    if feature != 0:
-        st.success(f'Residual: {residual:.2f}%')
 
 
 # In[ ]:
