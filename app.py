@@ -23,7 +23,7 @@ st.markdown("""
 
         /* Set width for the title */
         .main-title {
-            font-size: 24px;
+            font-size: 28px;
             font-weight: bold;
             width: 1020px; /* Set title width */
             word-break: break-word;
@@ -79,7 +79,7 @@ with col2:
 with col3:
     st.markdown('<div class="fixed-column">', unsafe_allow_html=True)
     st.markdown('<div class="small-header">Heavy metal properties</div>', unsafe_allow_html=True)
-    
+    st.markdown('<div class="spacing-row"></div>', unsafe_allow_html=True)
     feature10 = st.number_input(u'$\mathrm{Electronegativity}$', step=0.01, format='%.2f')
     feature11 = st.number_input(u'$\mathrm{Hydrated\;ion\;radius\;(Å)}$', step=0.01, format='%.2f')
     st.markdown('</div>', unsafe_allow_html=True)
