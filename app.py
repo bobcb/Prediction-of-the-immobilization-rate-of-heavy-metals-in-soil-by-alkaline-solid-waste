@@ -67,24 +67,21 @@ with col1:
 with col2:
     st.markdown('<div class="fixed-column">', unsafe_allow_html=True)
     st.markdown('<div class="small-header">Experimental conditions</div>', unsafe_allow_html=True)
+    st.markdown('<div class="spacing-row"></div>', unsafe_allow_html=True)
     feature6 = st.number_input(u'$\mathrm{Temperature\;(℃)}$', step=0.01, format='%.2f')
     feature7 = st.number_input(u'$\mathrm{Curing\;time\;(d)}$', step=0.01, format='%.2f')
     feature8 = st.number_input(u'$\mathrm{Liquid/Solid}$', step=0.01, format='%.2f')
     feature9 = st.number_input(u'$\mathrm{Extraction\;agent\;pH}$', step=0.01, format='%.2f')
     st.markdown('</div>', unsafe_allow_html=True)
 
-# Add spacing row between col2 and col3
-st.markdown('<div class="spacing-row"></div>', unsafe_allow_html=True)
 
 with col3:
     st.markdown('<div class="fixed-column">', unsafe_allow_html=True)
     st.markdown('<div class="small-header">Heavy metal properties</div>', unsafe_allow_html=True)
+    st.markdown('<div class="spacing-row"></div>', unsafe_allow_html=True)
     feature10 = st.number_input(u'$\mathrm{Electronegativity}$', step=0.01, format='%.2f')
     feature11 = st.number_input(u'$\mathrm{Hydrated\;ion\;radius\;(Å)}$', step=0.01, format='%.2f')
     st.markdown('</div>', unsafe_allow_html=True)
-
-# Experimental heavy metal immobilization rate input
-feature = st.number_input(u'$\mathrm{Experimental\;immobilization\;rate\;(\%)}$', step=0.01, format='%.2f')
 
 # Gather all feature inputs
 feature_values = [feature1, feature2, feature3, feature4, feature5, feature6, feature7, feature8, feature9, feature10, feature11]
