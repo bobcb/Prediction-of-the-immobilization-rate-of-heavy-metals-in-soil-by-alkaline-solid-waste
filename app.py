@@ -29,16 +29,11 @@ st.markdown("""
             word-break: break-word;
             hyphens: auto;  /* Adds hyphenation for long words */
         }
-    /* Small header style */
-    .small-header {
-        font-size: 18px;  /* 设置合适的字号大小 */
-        font-weight: bold;  /* 确保加粗 */
-    }
-        /* Align title left with first column, right with last column */
-        .title-container {
-            display: flex;
-            justify-content: space-between;  /* Align both sides of the title */
-            width: 100%;
+
+        /* Small header style */
+        .small-header {
+            font-size: 18px;  /* 设置合适的字号大小 */
+            font-weight: bold;  /* 确保加粗 */
         }
 
         /* Set fixed width for columns */
@@ -78,6 +73,9 @@ with col2:
     feature9 = st.number_input(u'$\mathrm{Extraction\;agent\;pH}$', step=0.01, format='%.2f')
     st.markdown('</div>', unsafe_allow_html=True)
 
+# Add spacing row between col2 and col3
+st.markdown('<div class="spacing-row"></div>', unsafe_allow_html=True)
+
 with col3:
     st.markdown('<div class="fixed-column">', unsafe_allow_html=True)
     st.markdown('<div class="small-header">Heavy metal properties</div>', unsafe_allow_html=True)
@@ -86,7 +84,7 @@ with col3:
     st.markdown('</div>', unsafe_allow_html=True)
 
 # Experimental heavy metal immobilization rate input
-feature = st.number_input(u'$\mathrm{Experimental\;immobilization\;rate\;(\%)}$', step=0.01, format='%.2f')
+
 
 # Gather all feature inputs
 feature_values = [feature1, feature2, feature3, feature4, feature5, feature6, feature7, feature8, feature9, feature10, feature11]
@@ -102,7 +100,6 @@ if st.button('Predict'):
 
     if feature != 0:
         st.success(f'Residual: {residual:.2f}%')
-
 
 
 # In[ ]:
