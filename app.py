@@ -82,17 +82,20 @@ feature = st.number_input(u'$\mathrm{Experimental\;immobilization\;rate\;(\%)}$'
 # Gather all feature inputs
 feature_values = [feature1, feature2, feature3, feature4, feature5, feature6, feature7, feature8, feature9, feature10, feature11]
 
-# Prediction and residual calculation
+# Prediction and error handling
 if st.button('Predict'):
-    input_data = np.array([feature_values])
-    input_data_scaled = scaler.transform(input_data)
-    prediction = model.predict(input_data_scaled)
-    residual = abs(float(prediction) - feature)
-    
-    st.success(f'Predicted Heavy Metal Immobilization Rate: {prediction[0]:.2f}%')
-    
-    if feature != 0:
-        st.success(f'Residual: {residual:.2f}%')
+    if any(v is None or v == 0 for v in feature_values):
+        st.error("Please fill in all input fields with valid values.")
+    else:
+        input_data = np.array([feature_values])
+        input_data_scaled = scaler.transform(input_data)
+        prediction = model.predict(input_data_scaled)
+        residual = abs(float(prediction) - feature)
+
+        st.success(f'Predicted Heavy Metal Immobilization Rate: {prediction[0]:.2f}%')
+
+        if feature != 0:
+            st.success(f'Residual: {residual:.2f}%')
 
 
 
