@@ -84,7 +84,6 @@ with col3:
     feature11 = st.number_input(u'$\mathrm{Hydrated\;ion\;radius\;(Å)}$', step=0.01, format='%.2f')
     st.markdown('</div>', unsafe_allow_html=True)
 
-feature = st.number_input(u'$\mathrm{Experimental\;immobilization\;rate\;(\%)}$', step=0.01, format='%.2f')
 
 # Gather all feature inputs
 feature_values = [feature1, feature2, feature3, feature4, feature5, feature6, feature7, feature8, feature9, feature10, feature11]
