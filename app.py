@@ -96,10 +96,10 @@ if st.button('Predict'):
 
 
 
-# In[1]:
+# In[ ]:
 
 
-get_ipython().system('pip freeze > requirements.txt')
+
 
 
 # In[ ]:
