@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# In[1]:
+# In[ ]:
 
 
 import streamlit as st
@@ -94,25 +94,21 @@ if st.button('Predict'):
     input_data = np.array([feature_values])
     input_data_scaled = scaler.transform(input_data)
     prediction = model.predict(input_data_scaled)
-    residual = abs(float(prediction) - feature)
     
     st.success(f'Predicted Heavy Metal Immobilization Rate: {prediction[0]:.2f}%')
     
-    if feature != 0:
-        st.success(f'Residual: {residual:.2f}%')
 
 
-# In[4]:
+# In[ ]:
 
 
-python3 --version
 
 
-# In[5]:
+
+# In[ ]:
 
 
-import sys
-print(sys.version)
+
 
 
 # In[ ]:
