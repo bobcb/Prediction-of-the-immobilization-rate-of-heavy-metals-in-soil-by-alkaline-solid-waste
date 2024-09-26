@@ -1,4 +1,4 @@
-joblib 
-numpy
+joblib==1.2.0
+numpy==1.24.3
 scikit-learn==1.3.0 
 streamlit==1.37.1
