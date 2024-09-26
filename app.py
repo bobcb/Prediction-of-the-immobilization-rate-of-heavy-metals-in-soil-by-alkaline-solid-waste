@@ -15,7 +15,7 @@ scaler = load('StandardScaler.joblib')
 
 
 # Set page title with proper alignment and hyphenation for long words
-st.header('Prediction of the immobilization rate of heavy metals in soil by alkaline solid waste)
+st.title('Prediction of the immobilization rate of heavy metals in soil by alkaline solid waste)
 
 # Create a container for all the content
 
