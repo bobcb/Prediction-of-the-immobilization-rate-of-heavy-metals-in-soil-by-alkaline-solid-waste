@@ -63,7 +63,6 @@ with col1:
     feature3 = st.number_input(u'$\mathrm{Al_2O_3\;(\%)}$', step=0.01, format='%.2f')
     feature4 = st.number_input(u'$\mathrm{Soil\;pH}$', step=0.01, format='%.2f')
     feature5 = st.number_input(u'$\mathrm{Soil\;heavy\;metal}$\n$\mathrm{concentration\;(mg/kg)}$', step=0.01, format='%.2f')
-    st.markdown('</div>', unsafe_allow_html=True)
 
 with col2:
     st.markdown('<div class="fixed-column">', unsafe_allow_html=True)
@@ -96,22 +95,4 @@ if st.button('Predict'):
     
     st.success(f'Predicted Heavy Metal Immobilization Rate: {prediction[0]:.2f}%')
     
-
-
-# In[ ]:
-
-
-
-
-
-# In[ ]:
-
-
-
-
-
-# In[ ]:
-
-
-
 
