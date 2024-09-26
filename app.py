@@ -22,8 +22,6 @@ st.title('Prediction of the immobilization rate of heavy metals in soil by alkal
 col1,  col2, col3 = st.columns(3)
 
     with col1:
-        
-        
         feature1 = st.number_input(u'$\mathrm{SiO_2\;(\%)}$', step=0.01, format='%.2f')
         feature2 = st.number_input(u'$\mathrm{CaO\;(\%)}$', step=0.01, format='%.2f')
         feature3 = st.number_input(u'$\mathrm{Al_2O_3\;(\%)}$', step=0.01, format='%.2f')
@@ -32,7 +30,6 @@ col1,  col2, col3 = st.columns(3)
         
 
     with col2:
-        
         feature6 = st.number_input(u'$\mathrm{Temperature\;(℃)}$', step=0.01, format='%.2f')
         feature7 = st.number_input(u'$\mathrm{Curing\;time\;(d)}$', step=0.01, format='%.2f')
         feature8 = st.number_input(u'$\mathrm{Liquid/Solid}$', step=0.01, format='%.2f')
@@ -40,11 +37,8 @@ col1,  col2, col3 = st.columns(3)
         
 
     with col3:
-        
         feature10 = st.number_input(u'$\mathrm{Electronegativity}$', step=0.01, format='%.2f')
         feature11 = st.number_input(u'$\mathrm{Hydrated\;ion\;radius\;(Å)}$', step=0.01, format='%.2f')
-        
-
 feature = st.number_input(u'$\mathrm{Experimental\;heavy\;metal\;immobilization\;rate\;(\%)}$', step=0.01, format='%.2f')
         
 
